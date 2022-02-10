@@ -46,3 +46,33 @@ var twoSum = function (nums, target) {
         }
     }
 };
+
+// Using hashmap O(N)
+
+var twoSum = function (nums, target) {
+
+    //     set pointers a and b
+    //     if value of pointer a + b == target, return index
+    //     else if sumvalue 
+
+    let map = {}
+
+    for (let i = 0; i < nums.length; i++) {
+        let currentValue = nums[i];
+        let complement = target - currentValue;
+
+        if (map[complement] !== undefined) {
+            return [map[complement], i];
+        } else {
+            map[currentValue] = i;
+        }
+
+    }
+};
+
+    // [2,7,11,15], target = 9
+    // complement = 9 - 2 => 7
+
+    // if key of complement exist in map
+    // return key and i
+    // else add currentValue as a map key and its' value as the index
