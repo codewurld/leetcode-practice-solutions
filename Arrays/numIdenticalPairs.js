@@ -1,3 +1,5 @@
+// solution 1512
+
 var numIdenticalPairs = function (nums) {
 
     let goodPairsCount = 0;
