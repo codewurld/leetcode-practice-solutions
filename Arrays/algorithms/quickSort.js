@@ -29,3 +29,21 @@ const quickSort = (arr) => {
 }
 
 // refactor
+const qSort = (arr) => {
+    if (arr.length < 2) {
+        return arr;
+    }
+
+    const pivot = arr[arr.length - 1];
+    const lessThanPivot = [];
+    const greatThanPivot = [];
+
+    for (const num of arr.slice(0, arr.length - 1)) {
+        num < pivot ? lessThanPivot.push(num) : greatThanPivot.push(num);
+    }
+
+    return [...qSort(lessThanPivot), pivot, ...qSort(greatThanPivot)];
+
+}
+
+console.log(qSort(myArray));
