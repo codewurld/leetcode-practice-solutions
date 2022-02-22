@@ -14,6 +14,7 @@ a.next = b;
 b.next = c;
 c.next = d;
 
+// iterative
 const findVal = (head, target) => {
     let currentPointer = head;
 
@@ -25,3 +26,13 @@ const findVal = (head, target) => {
 }
 
 console.log(findVal(a, 3));
+
+// Recursive
+const findVal2 = (head, target) => {
+    if (head.val === target) return true;
+    if (head === null) return false;
+
+    return findVal2(head.next, target);
+}
+
+console.log(findVal2(a, 4));
