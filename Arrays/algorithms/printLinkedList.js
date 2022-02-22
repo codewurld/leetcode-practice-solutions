@@ -25,3 +25,13 @@ const printLinkedList = (head) => {
 }
 
 console.log(printLinkedList(a))
+
+// iterative solution
+
+const printLinkedList2 = (head) => {
+    if (head === null) return;
+    console.log(head.val);
+    printLinkedList2(head.next);
+}
+
+console.log(printLinkedList2(a));
