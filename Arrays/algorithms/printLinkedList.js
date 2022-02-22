@@ -14,7 +14,7 @@ a.next = b;
 b.next = c;
 c.next = d;
 
-
+// iterative
 const printLinkedList = (head) => {
     let currentPointer = head;
 
@@ -26,7 +26,7 @@ const printLinkedList = (head) => {
 
 console.log(printLinkedList(a))
 
-// iterative solution
+// recursive solution
 
 const printLinkedList2 = (head) => {
     if (head === null) return;
@@ -35,3 +35,36 @@ const printLinkedList2 = (head) => {
 }
 
 console.log(printLinkedList2(a));
+
+// return LinkedList Values - iterative
+
+const linkedListValues = (head) => {
+    let result = [];
+
+    let currentPointer = head;
+
+    while (currentPointer !== null) {
+        result.push(currentPointer.val);
+        currentPointer = currentPointer.next;
+    }
+    return result;
+}
+
+console.log(linkedListValues(a));
+
+// recursive solution
+
+const linkedListValues2 = (head) => {
+    const result = [];
+    fillValues(head, result);
+    return result;
+}
+
+const fillValues = (head, result) => {
+    if (head === null) return;
+    result.push(head.val);
+    fillValues(head.next, result);
+}
+
+console.log(linkedListValues(a));
+
