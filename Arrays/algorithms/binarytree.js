@@ -27,6 +27,9 @@ c.right = f;
 
 // Iterative solution
 const depthFirstValue = (root) => {
+
+    if (root === null) return [];
+
     const stack = [root];
     const arr = [];
 
@@ -42,3 +45,16 @@ const depthFirstValue = (root) => {
 }
 
 console.log(depthFirstValue(a));
+
+// recursive solution
+
+const depthFirstValue2 = (root) => {
+    if (root === null) return [];
+
+    const leftVals = depthFirstValue2(root.left);
+    const rightVals = depthFirstValue2(root.right);
+
+    return [root.val, ...leftVals, ...rightVals];
+}
+
+console.log(depthFirstValue2(a));
