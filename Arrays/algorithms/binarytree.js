@@ -24,3 +24,21 @@ c.right = f;
 //       b    c
 //     /  \    \
 //    d    e    f
+
+// Iterative solution
+const depthFirstValue = (root) => {
+    const stack = [root];
+    const arr = [];
+
+    while (stack.length > 0) {
+        const current = stack.pop();
+        arr.push(current.val);
+
+        if (current.right) stack.push(current.right);
+        if (current.left) stack.push(current.left)
+    }
+    return arr;
+
+}
+
+console.log(depthFirstValue(a));

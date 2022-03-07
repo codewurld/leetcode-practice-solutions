@@ -1,0 +1,19 @@
+{
+  "name": "leetcode-solutions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "shortestPath.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codewurld/leetcode-practice-solutions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codewurld/leetcode-practice-solutions/issues"
+  },
+  "homepage": "https://github.com/codewurld/leetcode-practice-solutions#readme"
+}
