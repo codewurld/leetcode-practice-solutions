@@ -7,13 +7,12 @@ class NodeNo {
 
 const a = new NodeNo(2);
 const b = new NodeNo(8);
-const c = new NodeNo(3);
+const c = new NodeNo(3); .3
 const d = new NodeNo(7);
 
 a.next = b;
 b.next = c;
 c.next = d;
-
 // iterative
 const sumList = (head) => {
     let currentPointer = head;
