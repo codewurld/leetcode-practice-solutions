@@ -127,3 +127,14 @@ const depthFirstValIncludes = (root, target) => {
 }
 
 console.log(depthFirstValIncludes(a, 'f'));
+
+// Includes Target Problem - DFS recursive
+
+const treeIncludes = (root, target) => {
+    if (root === null) return false;
+    if (root.val === target) return true;
+
+    return treeIncludes(root.left, target) || treeIncludes(root.right, target);
+}
+
+console.log(treeIncludes(a, 'j'));
