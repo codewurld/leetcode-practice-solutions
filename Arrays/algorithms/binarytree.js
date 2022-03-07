@@ -85,3 +85,45 @@ const breadthFirstValue = (root) => {
 
     return result;
 }
+
+
+
+// Includes target problem - BFS
+
+const bFVIncludes = (root, target) => {
+    if (root === null) return false;
+    if (root.val === target) return true;
+
+    const queue = [root];
+
+    while (queue.length > 0) {
+        const current = queue.shift();
+
+        if (current.val === target) return true;
+
+        if (current.left) queue.push(current.left);
+        if (current.right) queue.push(current.right)
+    }
+    return false;
+}
+
+console.log(bFVIncludes(a, "m"));
+
+// Includes Target Problem - DFS Solution
+const depthFirstValIncludes = (root, target) => {
+    if (root === null) return false;
+    if (root.val === target) return true;
+
+    const stack = [root];
+
+    while (stack.length > 0) {
+        const current = stack.pop();
+        if (current.val === target) return true;
+
+        if (current.left) stack.push(current.left);
+        if (current.right) stack.push(current.right);
+    }
+    return false;
+}
+
+console.log(depthFirstValIncludes(a, 'f'));
