@@ -58,3 +58,30 @@ const depthFirstValue2 = (root) => {
 }
 
 console.log(depthFirstValue2(a));
+
+// Iterative - breadthfirst value
+
+const breadthFirstValue = (root) => {
+    if (root === null) return [];
+
+    const queue = [root];
+    const result = [];
+    // queue = [a,b,c,d,e,f]
+    // result = [a,b,c,d,e,f]
+
+    // a.left = b;
+    // a.right = c;
+    // b.left = d;
+    // b.right = e;
+    // c.right = f;
+    while (queue.length > 0) {
+        const current = queue.shift();
+
+        result.push(current.val);
+
+        if (current.left) queue.push(current.left);
+        if (current.right) queue.push(current.right);
+    }
+
+    return result;
+}
