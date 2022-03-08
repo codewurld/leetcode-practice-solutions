@@ -210,3 +210,38 @@ const sumBFS = (root) => {
 }
 
 console.log(sumBFS(a));
+
+
+// Find minimum value
+const minValue = (root) => {
+    if (root === null) return 0;
+
+    const stack = [root];
+    let minimumValue = root.val;
+
+    while (stack.length > 0) {
+        const current = stack.pop();
+
+        if (current.val < minimumValue) minimumValue = current.val;
+
+        if (current.left) stack.push(current.left);
+        if (current.right) stack.push(current.right);
+    }
+    return minimumValue;
+}
+
+console.log(minValue(a));
+
+//   min value recursive
+
+const minValRecursive = (root) => {
+    if (root === null) return Infinity;
+
+    const leftVal = minValRecursive(root.left);
+    const rightVal = minValRecursive(root.right);
+
+    return Math.min(root.val, leftVal, rightVal)
+
+}
+
+console.log(minValRecursive(a));
