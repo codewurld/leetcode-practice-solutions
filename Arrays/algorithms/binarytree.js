@@ -179,3 +179,14 @@ const sumTraversal = (root) => {
 }
 
 console.log(sumTraversal(a));
+
+
+// sum traversal recursive solution
+
+const sumRecursive = (root) => {
+    if (root === null) return 0;
+
+    return root.val + sumRecursive(root.left) + sumRecursive(root.right);
+}
+
+console.log(sumRecursive(a));
