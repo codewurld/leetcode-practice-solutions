@@ -33,3 +33,33 @@ const printGraph = (graph, sourceNode) => {
 }
 
 console.log(printGraph(ourGraph, 'a'));
+
+
+const hasPath = (graph, sourceNode, dest) => {
+
+    if (sourceNode === dest) return true;
+
+    const stack = [sourceNode];
+
+    while (stack.length > 0) {
+        const currentNode = stack.pop();
+
+        for (let neighbour of graph[currentNode]) {
+            if (neighbour === dest) return true;
+
+            stack.push(neighbour);
+        }
+    }
+    return false;
+}
+
+//   recursive;
+
+const hasPathRecursive = (graph, sourceNode, dest) => {
+
+    if (sourceNode === dest) return true;
+
+    for (let neighbour of graph[sourceNode]) {
+        return hasPathRecursive(graph, neighbour, dest);
+    }
+}
