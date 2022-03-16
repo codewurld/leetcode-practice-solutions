@@ -71,4 +71,55 @@ const fillValues = (head, result) => {
     fillValues(head.next, result);
 }
 
-console.log(linkedListValRecursive(b))
+console.log(linkedListValRecursive(b));
+
+// LINKEDLIST SUM
+const linkedListSum = (head) => {
+    if (head === null) return 0;
+
+    let currentPointer = head;
+    let sum = 0;
+
+    while (currentPointer !== null) {
+        sum += currentPointer.val;
+        currentPointer = currentPointer.next;
+    }
+    return sum;
+}
+
+const linkedListSumRecursive = (head) => {
+
+    if (head === null) return 0;
+
+    return head.val + linkedListSumRecursive(head.next);
+}
+
+console.log(linkedListSumRecursive(a))
+
+
+console.log(linkedListSum(a));
+
+// LINKEDLIST FIND TARGET
+
+const findTarget = (head, target) => {
+    // if(head===null) return;
+
+    let currentPointer = head;
+
+    while (currentPointer !== null) {
+        if (currentPointer.val === target) return true;
+        currentPointer = currentPointer.next;
+    }
+    return false;
+}
+
+console.log(findTarget(a, 7))
+
+const findTargetRecursively = (head, target) => {
+    if (head === null) return false;
+    if (head.val === target) return true;
+
+    return findTargetRecursively(head.next, target);
+}
+
+console.log(findTargetRecursively(b, 58))
