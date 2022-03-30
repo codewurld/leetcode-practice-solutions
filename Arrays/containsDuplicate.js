@@ -28,3 +28,19 @@ var containsDuplicate = function (nums) {
     }
     return true;
 };
+
+// hashmap solution
+
+var containsDuplicate = function (nums) {
+
+    let map = {};
+
+    for (let num of nums) {
+        if (map[num] !== undefined) {
+            return true;
+        } else {
+            map[num] = num;
+        }
+    }
+    return false;
+};
