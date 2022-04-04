@@ -12,3 +12,17 @@ var removeDuplicates = function (nums) {
 
     return nums.length;
 };
+
+// solution 2
+var removeDuplicates = function (nums) {
+
+    let pointer1 = 0;
+
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[pointer1] !== nums[i]) {
+            pointer1++;
+            nums[pointer1] = nums[i]
+        }
+    }
+    return pointer1 + 1;
+};
