@@ -21,6 +21,7 @@ var postorderTraversal = function (root) {
     return [...postorderTraversal(root.left), ...postorderTraversal(root.right), root.val]
 };
 
+// O(N) O(N)
 const postorderTraversal = (root) => {
     if (!root) return [];
 

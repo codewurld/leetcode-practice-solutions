@@ -1,5 +1,6 @@
 // solution 169
 
+// O(N) O(1)
 var majorityElement = function (nums) {
 
     let hashmap = {};
@@ -13,6 +14,24 @@ var majorityElement = function (nums) {
             return key;
         }
     }
+};
+
+// O(N) O(1)
+var majorityElement = function (nums) {
+
+    let count = 0;
+    let map = {}
+    let n = Math.floor(nums.length / 2);
+
+    for (let num of nums) {
+        if (map[num]) {
+            map[num]++;
+        } else {
+            map[num] = 1;
+        }
+        if (map[num] > n) return num;
+    }
+
 };
 
 // brute force approach
