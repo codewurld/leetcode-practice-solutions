@@ -20,3 +20,20 @@ var postorderTraversal = function (root) {
 
     return [...postorderTraversal(root.left), ...postorderTraversal(root.right), root.val]
 };
+
+const postorderTraversal = (root) => {
+    if (!root) return [];
+
+    const traversedResult = []
+    const stack = [root];
+
+    while (stack.length) {
+        const currentNode = stack.pop();
+
+        if (currentNode.left) stack.push(currentNode.left);
+        if (currentNode.right) stack.push(currentNode.right);
+
+        traversedResult.push(currentNode.val);
+    }
+    return traversedResult.reverse();
+};
